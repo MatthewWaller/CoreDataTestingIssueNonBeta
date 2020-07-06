@@ -1,34 +1,53 @@
-//
-//  CoreDataTestingIssueNonBetaTests.swift
-//  CoreDataTestingIssueNonBetaTests
-//
-//  Created by Matthew Waller on 7/3/20.
-//  Copyright © 2020 Matthew Waller. All rights reserved.
-//
-
 import XCTest
+import CoreData
 @testable import CoreDataTestingIssueNonBeta
 
-class CoreDataTestingIssueNonBetaTests: XCTestCase {
-
-    override func setUpWithError() throws {
+class CoreDataTestingIssueTests: XCTestCase {
+    private var context: NSManagedObjectContext?
+    
+    override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.context = NSManagedObjectContext.contextForTests()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testExampleOne() throws {
+        guard let context = context else {
+            return
         }
+        let note = Note(context: context)
+        note.title = "Hello"
+        try! context.save()
     }
+    
+    func testExampleTwo() throws {
+        guard let context = context else {
+            return
+        }
+        let note = Note(context: context)
+        note.title = "Hello"
+        try! context.save()
+    }
+}
 
+extension NSManagedObjectContext {
+    
+    class func contextForTests() -> NSManagedObjectContext {
+        // Get the model
+        let model = NSManagedObjectModel.mergedModel(from: Bundle.allBundles)!
+        
+        let container = NSPersistentContainer(name: "TestIssuesModel", managedObjectModel: model)
+        container.persistentStoreDescriptions.first?.type = NSInMemoryStoreType
+        container.loadPersistentStores { (description, error) in
+            // Check if the data store is in memory
+            precondition( description.type == NSInMemoryStoreType )
+            
+            // Check if creating container wrong
+            if let error = error {
+                fatalError("Create an in-mem coordinator failed \(error)")
+            }
+        }
+        
+        // Create and configure the coordinator
+        return container.viewContext
+    }
 }

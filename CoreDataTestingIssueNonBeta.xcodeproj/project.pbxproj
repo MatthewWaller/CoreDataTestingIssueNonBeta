@@ -14,6 +14,9 @@
 		DAC5CDA824B00263003712F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAC5CDA724B00263003712F7 /* Preview Assets.xcassets */; };
 		DAC5CDAB24B00263003712F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC5CDA924B00263003712F7 /* LaunchScreen.storyboard */; };
 		DAC5CDB624B00264003712F7 /* CoreDataTestingIssueNonBetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5CDB524B00264003712F7 /* CoreDataTestingIssueNonBetaTests.swift */; };
+		DAC5CDC324B00286003712F7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC5CDC224B00286003712F7 /* CoreDataStack.swift */; };
+		DAC5CDC624B002CA003712F7 /* TestIssuesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAC5CDC424B002CA003712F7 /* TestIssuesModel.xcdatamodeld */; };
+		DAC5CDC724B0034E003712F7 /* TestIssuesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAC5CDC424B002CA003712F7 /* TestIssuesModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,8 @@
 		DAC5CDB124B00264003712F7 /* CoreDataTestingIssueNonBetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataTestingIssueNonBetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC5CDB524B00264003712F7 /* CoreDataTestingIssueNonBetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestingIssueNonBetaTests.swift; sourceTree = "<group>"; };
 		DAC5CDB724B00264003712F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAC5CDC224B00286003712F7 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		DAC5CDC524B002CA003712F7 /* TestIssuesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestIssuesModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				DAC5CD9E24B00263003712F7 /* AppDelegate.swift */,
+				DAC5CDC224B00286003712F7 /* CoreDataStack.swift */,
+				DAC5CDC424B002CA003712F7 /* TestIssuesModel.xcdatamodeld */,
 				DAC5CDA024B00263003712F7 /* SceneDelegate.swift */,
 				DAC5CDA224B00263003712F7 /* ContentView.swift */,
 				DAC5CDA424B00263003712F7 /* Assets.xcassets */,
@@ -208,8 +215,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC5CDC324B00286003712F7 /* CoreDataStack.swift in Sources */,
 				DAC5CD9F24B00263003712F7 /* AppDelegate.swift in Sources */,
 				DAC5CDA124B00263003712F7 /* SceneDelegate.swift in Sources */,
+				DAC5CDC624B002CA003712F7 /* TestIssuesModel.xcdatamodeld in Sources */,
 				DAC5CDA324B00263003712F7 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAC5CDB624B00264003712F7 /* CoreDataTestingIssueNonBetaTests.swift in Sources */,
+				DAC5CDC724B0034E003712F7 /* TestIssuesModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +483,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DAC5CDC424B002CA003712F7 /* TestIssuesModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DAC5CDC524B002CA003712F7 /* TestIssuesModel.xcdatamodel */,
+			);
+			currentVersion = DAC5CDC524B002CA003712F7 /* TestIssuesModel.xcdatamodel */;
+			path = TestIssuesModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DAC5CD9324B00263003712F7 /* Project object */;
 }
